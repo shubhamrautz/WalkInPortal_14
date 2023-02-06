@@ -1,0 +1,18 @@
+.abcon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6vh;
+  }
+  .abcon div {
+    margin: 0 4px;
+    font: 600 14px/18px Quicksand;
+    color: #1f7a54;
+  }
+  
+  .abcon > :nth-child(2) {
+    border: 1px solid #0000001a;
+  }
+.abcon a{
+   text-decoration: none;
+   color: #1f7a54; 
+}

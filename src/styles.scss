@@ -1,1 +1,81 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$my-palette: (
+ 50: rgb(0, 0, 0),
+ 100: #1f7a54,
+ 200: #1f7a54,
+ 300: #1f7a54,
+ 400: #1f7a54,
+ 500:#1f7a54,
+ 600:#1f7a54,
+ 700:#1f7a54,
+ 800:#1f7a54,
+ 900:#1f7a54,
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: rgba(black, 0.87),
+   400: rgba(black, 0.87),
+   500: rgba(black, 0.87),
+   600: rgba(black, 0.87),
+   700: rgba(black, 0.87),
+   800: rgba(black, 0.87),
+   900: white,
+   
+)
+);
+
+$WalkInPortal-primary: mat.define-palette($my-palette);
+$WalkInPortal-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$WalkInPortal-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$WalkInPortal-theme: mat.define-light-theme((
+  color: (
+    primary: $WalkInPortal-primary,
+    accent: $WalkInPortal-accent,
+    warn: $WalkInPortal-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($WalkInPortal-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+
+html, body { height: 100%; }
+body { margin: 0;
+background-color: #EEEEEE; }
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./assets/Quicksand font 1/Quicksand-VariableFont_wght.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Quicksand-light';
+  src: url('./assets/Quicksand font 1/static/Quicksand-Medium.ttf')
+    format('truetype');
+  font-weight: 500;
+}
